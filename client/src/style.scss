@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+$red: #f44040;
 $orange: #f9b872;
 $yellow: #e5bc70;
 $blue: #b6e1e7;
 $bluer: #45bccc;
+
 $white: #ffffff;
+$grey: #333;
 
 * {
   font-family: "Montserrat", sans-serif;
@@ -22,7 +25,7 @@ $white: #ffffff;
       color: inherit;
     }
 
-    // LOGIN AND REGISTER
+    // ========================== LOGIN AND REGISTER ==========================
     .auth {
       display: flex;
       flex-direction: column;
@@ -72,7 +75,7 @@ $white: #ffffff;
       }
     }
 
-    // NAVBAR
+    // ========================== NAVBAR ==========================
     .navbar {
       .container {
         padding: 10px 0px;
@@ -119,7 +122,7 @@ $white: #ffffff;
       }
     }
 
-    // FOOTER
+    // ========================== FOOTER ==========================
 
     footer {
       margin-top: 100px;
@@ -148,7 +151,7 @@ $white: #ffffff;
           display: flex;
           gap: 100px;
 
-          &:nth-child(2n+1){
+          &:nth-child(2n + 1) {
             flex-direction: row-reverse;
           }
 
@@ -158,7 +161,7 @@ $white: #ffffff;
 
             &::after {
               content: "";
-              width: 100%;  
+              width: 100%;
               height: 100%;
               background-color: $blue;
               position: absolute;
@@ -166,7 +169,6 @@ $white: #ffffff;
               left: -20px;
               z-index: -1;
             }
-
 
             img {
               width: 100%;
@@ -182,13 +184,13 @@ $white: #ffffff;
             justify-content: space-between;
 
             h1 {
-              font-size: 48px; 
+              font-size: 48px;
             }
 
             p {
               font-size: 18px;
             }
-            
+
             button {
               width: max-content;
               padding: 10px 20px;
@@ -204,6 +206,213 @@ $white: #ffffff;
                 color: $white;
               }
             }
+          }
+        }
+      }
+    }
+    // ========================== SINGLE ==========================
+    .single {
+      display: flex;
+      gap: 50px;
+
+      .content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 14px;
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-weight: bold;
+          }
+
+          .edit {
+            display: flex;
+            gap: 5px;
+
+            .editBtn {
+              width: max-content;
+              padding: 10px 20px;
+              border: none;
+              cursor: pointer;
+              background-color: $white;
+              border: 1px solid $orange;
+              color: $orange;
+
+              &:hover {
+                border: 1px solid $orange;
+                background-color: $orange;
+                color: $white;
+              }
+            }
+
+            .deleteBtn {
+              width: max-content;
+              padding: 10px 20px;
+              border: none;
+              cursor: pointer;
+              background-color: $white;
+              border: 1px solid $red;
+              color: $red;
+
+              &:hover {
+                border: 1px solid $red;
+                background-color: $red;
+                color: $white;
+              }
+            }
+          }
+        }
+
+        h1 {
+          color: $grey;
+          font-size: 48px;
+        }
+
+        p {
+          text-align: justify;
+          line-height: 30px;
+        }
+      }
+
+      .menu {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        h1 {
+          font-size: 20px;
+          color: $grey;
+        }
+
+        .post {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+        }
+
+        button {
+          width: max-content;
+          padding: 10px 20px;
+          border: none;
+          cursor: pointer;
+          background-color: $white;
+          border: 1px solid $bluer;
+          color: $bluer;
+
+          &:hover {
+            border: 1px solid $white;
+            background-color: $blue;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    // ========================== WRITE ==========================
+
+    .add {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+
+      .content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input {
+          padding: 10px;
+          border: 1px solid $grey;
+        }
+
+        .editorContainer {
+          height: 300px;
+          overflow: scroll;
+
+          .editor {
+            height: 100%;
+            border: none;
+            border: 1px solid $blue
+          }
+        }
+      }
+
+      .menu {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .item {
+          border: 1px solid $blue;
+          padding: 10px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          color: $grey;
+
+          h1 {
+            font-size: 20px;
+          }
+
+          .buttons {
+            display: flex;
+            justify-content: space-between;
+
+            :first-child {
+              cursor: pointer;
+              color: $orange;
+              background-color: $white;
+              border: 1px solid $orange;
+              padding: 3px 5px;
+            }
+            :last-child {
+              cursor: pointer;
+              color: $white;
+              background-color: $orange;
+              border: 1px solid $orange;
+              padding: 3px 5px;
+            }
+          }
+
+          .file {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+
+          .cat  {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            color: $orange
           }
         }
       }
